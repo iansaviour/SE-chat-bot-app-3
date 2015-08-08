@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SE chat bot app 3", "SE chat bot app 3\SE chat bot app 3.csproj", "{DCE2FC21-2522-442F-B49E-026CF4750D3C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{84D9BD6B-E84D-4410-A7E3-92216EBF219E} = {84D9BD6B-E84D-4410-A7E3-92216EBF219E}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonInterfaces", "CommonInterfaces\CommonInterfaces.csproj", "{84D9BD6B-E84D-4410-A7E3-92216EBF219E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EE7F2F01-26E9-4571-87A1-D962F908DC63}"
+	ProjectSection(SolutionItems) = preProject
+		ChangeLog.txt = ChangeLog.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helper", "Helper\Helper.csproj", "{92227AB9-E41C-4690-A729-C3E9445CA3F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{DA6FF73C-567C-477C-87F0-77CDC9F34EC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleCoreCommands", "ModuleCoreCommands\ModuleCoreCommands.csproj", "{34904E5F-1088-4B4E-9E20-E8BDBD908FD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModulePotato", "ModulePotato\ModulePotato.csproj", "{AD6F207E-A7F3-4DF9-91E7-36FF110B6660}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCE2FC21-2522-442F-B49E-026CF4750D3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCE2FC21-2522-442F-B49E-026CF4750D3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCE2FC21-2522-442F-B49E-026CF4750D3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCE2FC21-2522-442F-B49E-026CF4750D3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84D9BD6B-E84D-4410-A7E3-92216EBF219E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84D9BD6B-E84D-4410-A7E3-92216EBF219E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84D9BD6B-E84D-4410-A7E3-92216EBF219E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84D9BD6B-E84D-4410-A7E3-92216EBF219E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92227AB9-E41C-4690-A729-C3E9445CA3F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92227AB9-E41C-4690-A729-C3E9445CA3F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92227AB9-E41C-4690-A729-C3E9445CA3F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92227AB9-E41C-4690-A729-C3E9445CA3F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34904E5F-1088-4B4E-9E20-E8BDBD908FD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34904E5F-1088-4B4E-9E20-E8BDBD908FD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34904E5F-1088-4B4E-9E20-E8BDBD908FD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34904E5F-1088-4B4E-9E20-E8BDBD908FD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD6F207E-A7F3-4DF9-91E7-36FF110B6660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD6F207E-A7F3-4DF9-91E7-36FF110B6660}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD6F207E-A7F3-4DF9-91E7-36FF110B6660}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD6F207E-A7F3-4DF9-91E7-36FF110B6660}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{34904E5F-1088-4B4E-9E20-E8BDBD908FD7} = {DA6FF73C-567C-477C-87F0-77CDC9F34EC1}
+		{AD6F207E-A7F3-4DF9-91E7-36FF110B6660} = {DA6FF73C-567C-477C-87F0-77CDC9F34EC1}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,62 @@
+﻿
+
+
+About
+
+"SE chat bot app 3" is supposed to be simpler and better than "SE chat bot project 2"
+
+Main points:
+− Actually load and unload modules at runtime, allowing for changes without shutting down the bot
+− Less unused code
+− more straightforward call stack
+− allow to build modules while the app is running
+
+Core package:
+− ChatApi
+− Runtime module loader
+− Incoming message queue (Brain processes them)
+
+Modules:
+− Brain (core logic that calls other modules)
+− All other modules controlled by Brain module
+
+
+————
+
+Planned
+
+additional:
+− activity graph? (timeline?)
+
+
+ChatApi: Announce when (dis)connecting to chat in the debug room.
+also when updating modules
+
+
+restore "edit own message if command message was edited" functionality
+− commandResponseMessageIDsDic
+
+tray notification when:
+− bad things happen (connection lost)
+− user mentioned
+− bot mentioned
+
+configurize all paths
+
+add/remove entries by their ID number, keep entries, don't delete them, unless deleted by a force-deletion command, which is just a -f flag after it. Also delete ranges, like 1200-1299 in case some spammer fucked it up
+
+
+————
+
+# 3.0.0
+
+…………
+−−−−−
+---------
+
+
+// bot
+− unload/load modules (make sure it works)
+− check if updates work − how to update? − press button on the form, search for *.dll in compiled module folders, copy over to working dir, instantiate IModules, start
+// this will probably be unused forever
+
