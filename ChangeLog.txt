@@ -48,6 +48,11 @@ add/remove entries by their ID number, keep entries, don't delete them, unless d
 
 ————
 
+# 3.0.3
+
+~ oops
+
+
 # 3.0.2
 
 ~ moved reconnection related fields into chat api

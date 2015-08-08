@@ -40,7 +40,7 @@ namespace SE_chat_bot_app_3
         public void Start()
         {
             exceptionOccurred = false;
-            chatapi LastChatApiInitializationAttempt = DateTime.Now;
+            LastChatApiInitializationAttempt = DateTime.Now;
 
             startTime = DateTime.UtcNow;
 
