@@ -67,9 +67,7 @@ namespace SE_chat_bot_app_3
 
         public ChatApi chatapi;
         public DateTime StartTimeUTC { get { return chatapi.startTime; } }
-        TimeSpan LastEventArrivalMaximumDelta = new TimeSpan(0, 3, 0);
-        TimeSpan ChatApiReinitializationInterval = new TimeSpan(0, 1, 0);
-        DateTime LastChatApiInitializationAttempt = DateTime.MinValue;
+
 
         // bot update loop task
         CancellationTokenSource taskCancellationTokenSource;
@@ -179,11 +177,12 @@ namespace SE_chat_bot_app_3
         void CheckIfReconnectIsNecessary()
         {
             if (chatapi.exceptionOccurred ||
-                DateTime.Now - chatapi.lastEventArrivalTime > LastEventArrivalMaximumDelta &&
-                DateTime.Now - LastChatApiInitializationAttempt > ChatApiReinitializationInterval)
+                DateTime.Now - chatapi.lastEventArrivalTime > chatapi.LastEventArrivalMaximumDelta &&
+                DateTime.Now - chatapi.LastChatApiInitializationAttempt > chatapi.ChatApiReinitializationInterval)
             {
-                Log("[R] Reconnecting chat api.");
-                InitializeChatApi();
+                Log("[R] Restarting chat api.");
+                chatapi.Stop();
+                chatapi.Start();
             }
         }
 
@@ -392,25 +391,15 @@ namespace SE_chat_bot_app_3
 
 
 
-
-
         public void Start()
         {
-            InitializeChatApi();
+            chatapi = new ChatApi(Login, Pass, Name, UserID, MainRoomID, DebugRoomID);
+            chatapi.Start();
+            this.Name = chatapi.botname;
+            this.UserID = chatapi.userID;
+
             LoadModulesAtRuntime();
             StartTask();
-        }
-        void InitializeChatApi()
-        {
-            try
-            {
-                LastChatApiInitializationAttempt = DateTime.Now;
-                chatapi = new ChatApi(Login, Pass, Name, UserID, MainRoomID, DebugRoomID);
-                chatapi.Start();
-                this.Name = chatapi.botname;
-                this.UserID = chatapi.userID;
-            }
-            catch (Exception ex) { Log("[X] \n" + ex); }
         }
         public void Save()
         {
