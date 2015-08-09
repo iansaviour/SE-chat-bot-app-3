@@ -26,7 +26,7 @@ namespace SE_chat_bot_app_3
 
         public bool exceptionOccurred;
         public TimeSpan LastEventArrivalMaximumDelta = new TimeSpan(0, 3, 0);
-        public TimeSpan ChatApiReinitializationInterval = new TimeSpan(0, 1, 0);
+        public TimeSpan ChatApiReinitializationInterval = new TimeSpan(0, 15, 0);
         public DateTime LastChatApiInitializationAttempt = DateTime.MinValue;
 
         public Dictionary<int, int> processedMessageIDEditsDic = new Dictionary<int, int>();
@@ -48,7 +48,8 @@ namespace SE_chat_bot_app_3
 
             if (mainRoomID > 0)
             {
-                roomTranscriptDic[mainRoomID] = new List<ChatMessage>();
+                if (!roomTranscriptDic.ContainsKey(mainRoomID))
+                    roomTranscriptDic[mainRoomID] = new List<ChatMessage>();
                 JoinRoom(mainRoomID);
                 botname = client.Rooms[0].Me.Name;
                 userID = client.Rooms[0].Me.ID;
@@ -57,7 +58,8 @@ namespace SE_chat_bot_app_3
 
             if (debugRoomID > 0)
             {
-                roomTranscriptDic[debugRoomID] = new List<ChatMessage>();
+                if (!roomTranscriptDic.ContainsKey(debugRoomID))
+                    roomTranscriptDic[debugRoomID] = new List<ChatMessage>();
                 JoinRoom(debugRoomID);
                 client.Rooms[0].WebSocketRecoveryTimeout = new TimeSpan(10, 0, 0, 0);
             }

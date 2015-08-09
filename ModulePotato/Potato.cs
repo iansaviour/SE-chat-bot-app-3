@@ -278,7 +278,7 @@ public class ModulePotato : ModuleBase, IModule
                 postedImages = P;
                 unpostedImages = U;
 
-                Log("[L] Loaded " + postedImages.Count + " posted and " + unpostedImages.Count + "unposted image links.");
+                Log("[L] Loaded " + postedImages.Count + " posted and " + unpostedImages.Count + " unposted image links.");
             }
             else
             {
@@ -1187,5 +1187,7 @@ public class ModulePotato : ModuleBase, IModule
             return request;
         }
     }
+
+    public new void Log(string text) { if (debugLogMethod != null)  debugLogMethod(text); }
 }
 
