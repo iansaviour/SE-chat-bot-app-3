@@ -51,9 +51,14 @@ namespace SE_chat_bot_app_3
                 if (!roomTranscriptDic.ContainsKey(mainRoomID))
                     roomTranscriptDic[mainRoomID] = new List<ChatMessage>();
                 JoinRoom(mainRoomID);
-                botname = client.Rooms[0].Me.Name;
-                userID = client.Rooms[0].Me.ID;
-                client.Rooms[0].WebSocketRecoveryTimeout = new TimeSpan(10, 0, 0, 0);
+                if (client.Rooms.Count > 0)
+                {
+                    botname = client.Rooms[0].Me.Name;
+                    userID = client.Rooms[0].Me.ID;
+                    client.Rooms[0].WebSocketRecoveryTimeout = new TimeSpan(10, 0, 0, 0);
+                }
+                else
+                    Log("[X] Failed to join main room.");
             }
 
             if (debugRoomID > 0)
@@ -61,7 +66,10 @@ namespace SE_chat_bot_app_3
                 if (!roomTranscriptDic.ContainsKey(debugRoomID))
                     roomTranscriptDic[debugRoomID] = new List<ChatMessage>();
                 JoinRoom(debugRoomID);
-                client.Rooms[0].WebSocketRecoveryTimeout = new TimeSpan(10, 0, 0, 0);
+                if (client.Rooms.Count > 1)
+                    client.Rooms[0].WebSocketRecoveryTimeout = new TimeSpan(10, 0, 0, 0);
+                else
+                    Log("[X] Failed to join debug room.");
             }
         }
         public void Stop() { client.Dispose(); Log("[×] Chat client disposed. New messages should stop arriving now."); }
