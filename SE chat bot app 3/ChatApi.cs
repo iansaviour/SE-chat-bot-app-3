@@ -58,7 +58,10 @@ namespace SE_chat_bot_app_3
                     client.Rooms[0].WebSocketRecoveryTimeout = new TimeSpan(10, 0, 0, 0);
                 }
                 else
+                {
+                    exceptionOccurred = true;
                     Log("[X] Failed to join main room.");
+                }
             }
 
             if (debugRoomID > 0)
@@ -69,7 +72,10 @@ namespace SE_chat_bot_app_3
                 if (client.Rooms.Count > 1)
                     client.Rooms[0].WebSocketRecoveryTimeout = new TimeSpan(10, 0, 0, 0);
                 else
+                {
+                    exceptionOccurred = true;
                     Log("[X] Failed to join debug room.");
+                }
             }
         }
         public void Stop() { client.Dispose(); Log("[×] Chat client disposed. New messages should stop arriving now."); }

@@ -176,9 +176,9 @@ namespace SE_chat_bot_app_3
         }
         void CheckIfReconnectIsNecessary()
         {
-            if (chatapi.exceptionOccurred ||
-                DateTime.Now - chatapi.lastEventArrivalTime > chatapi.LastEventArrivalMaximumDelta &&
-                DateTime.Now - chatapi.LastChatApiInitializationAttempt > chatapi.ChatApiReinitializationInterval)
+            if (DateTime.Now - chatapi.LastChatApiInitializationAttempt > chatapi.ChatApiReinitializationInterval &&
+                DateTime.Now - chatapi.lastEventArrivalTime > chatapi.LastEventArrivalMaximumDelta ||
+                chatapi.exceptionOccurred)
             {
                 Log("[R] Restarting chat api.");
                 chatapi.Stop();
