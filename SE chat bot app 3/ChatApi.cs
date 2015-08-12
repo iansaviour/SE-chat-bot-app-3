@@ -39,6 +39,8 @@ namespace SE_chat_bot_app_3
 
         public void Start()
         {
+            Log("[…] Starting chat api…");
+
             exceptionOccurred = false;
             LastChatApiInitializationAttempt = DateTime.Now;
 
@@ -51,11 +53,13 @@ namespace SE_chat_bot_app_3
                 if (!roomTranscriptDic.ContainsKey(mainRoomID))
                     roomTranscriptDic[mainRoomID] = new List<ChatMessage>();
                 JoinRoom(mainRoomID);
+                Log("[…] Joined main room.");
                 if (client.Rooms.Count > 0)
                 {
                     botname = client.Rooms[0].Me.Name;
                     userID = client.Rooms[0].Me.ID;
                     client.Rooms[0].WebSocketRecoveryTimeout = new TimeSpan(10, 0, 0, 0);
+                    Log("[…] Found bot name in main room.");
                 }
                 else
                 {
@@ -69,6 +73,7 @@ namespace SE_chat_bot_app_3
                 if (!roomTranscriptDic.ContainsKey(debugRoomID))
                     roomTranscriptDic[debugRoomID] = new List<ChatMessage>();
                 JoinRoom(debugRoomID);
+                Log("[…] Joined debug room.");
                 if (client.Rooms.Count > 1)
                     client.Rooms[0].WebSocketRecoveryTimeout = new TimeSpan(10, 0, 0, 0);
                 else
@@ -77,8 +82,10 @@ namespace SE_chat_bot_app_3
                     Log("[X] Failed to join debug room.");
                 }
             }
+
+            Log("[.] Started chat api.");
         }
-        public void Stop() { client.Dispose(); Log("[×] Chat client disposed. New messages should stop arriving now."); }
+        public void Stop() { exceptionOccurred = true; client.Dispose(); Log("[×] Chat client disposed. New messages should stop arriving now."); }
         void JoinRoom(int roomid)
         {
             try
@@ -87,6 +94,7 @@ namespace SE_chat_bot_app_3
                 var room = client.JoinRoom(url);
                 room.IgnoreOwnEvents = false;
                 AddRoomEventListeners(room);
+                Log("[…] Successfully joined room with id \"" + roomid + "\".");
             }
             catch (Exception ex) { Log("[X] Could not join room with id \"" + roomid + "\":\n" + ex); }
         }
