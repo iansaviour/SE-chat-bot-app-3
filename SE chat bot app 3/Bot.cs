@@ -223,9 +223,15 @@ namespace SE_chat_bot_app_3
             if (bot.BannedUserIDs.Contains(msg.UserID))
                 return false;
 
+            // if msg.replyMID is to a bot's message, then it's true
+            var owns = GetOwnMessagesFromTranscript();
+            foreach (var own in owns)
+                if (own.MessageID == msg.ReplyMessageID && own.UserID == this.UserID)
+                    return true;
 
             bool b = false;
             var n = Helper.MessageContainsBotNameOrBeginsWithTriggerSymbol(bot.Name, msg.Text, bot.TriggerSymbol);
+
             switch (n)
             {
                 case 0:

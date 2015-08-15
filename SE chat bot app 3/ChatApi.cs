@@ -170,7 +170,7 @@ namespace SE_chat_bot_app_3
             }
             else // add own message to transcript without processing
             {
-                roomTranscript.Add(cm);
+                //roomTranscript.Add(cm);
                 Log("[−] Own message received. No processing required.");
             }
         }

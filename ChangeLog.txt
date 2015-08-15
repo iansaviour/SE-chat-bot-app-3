@@ -46,7 +46,14 @@ configurize all paths
 add/remove entries by their ID number, keep entries, don't delete them, unless deleted by a force-deletion command, which is just a -f flag after it. Also delete ranges, like 1200-1299 in case some spammer fucked it up
 
 
+#unbox posts a new one instead of editing
+
 ————
+
+# 3.0.7
+
+~ restored @response processing
+
 
 # 3.0.6
 
