@@ -268,8 +268,8 @@ namespace SE_chat_bot_app_3
             if (bot.CommandAliases.ContainsKey(cmd))
                 cmdToExecute = bot.CommandAliases[cmd];
 
-            if (Command_ModuleDic.ContainsKey(cmd))
-                return Command_ModuleDic[cmd].Command(bot, pr, msg, cmdToExecute, arg, cmd, arg);
+            if (Command_ModuleDic.ContainsKey(cmdToExecute))
+                return Command_ModuleDic[cmdToExecute].Command(bot, pr, msg, cmdToExecute, arg, cmd, arg);
 
             return pr;
         }
@@ -462,6 +462,7 @@ namespace SE_chat_bot_app_3
                     LoadModuleAtRuntime(pm);
             }
         }
+
 
 
         public List<IModule> GetLoadedModules() { return ModuleName_ModuleDic.Values.ToList(); }

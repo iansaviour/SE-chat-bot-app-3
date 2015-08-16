@@ -330,7 +330,7 @@ namespace SE_chat_bot_app_3
         }
         void SoftShutdown()
         {
-            try { bot.SoftShutdown("Stop button pressed on form or stopped after start because of bad credentials, or an unexpected error."); }
+            try { bot.Save(); bot.SoftShutdown("Stop button pressed on form or stopped after start because of bad credentials, or an unexpected error."); }
             catch (Exception ex) { Log("[X] Unacceptable!!!\n" + ex); }
         }
 

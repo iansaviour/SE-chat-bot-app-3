@@ -98,6 +98,10 @@ public static class Helper
                 if (t.StartsWith(address))
                     t = t.Replace(address, "").TrimStart(',').Trim();
             }
+            if (t.StartsWith(":"))
+            {
+                t = new Regex(@"^\:\d.*? (.*$)").Match(t).Groups[1].Value;
+            }
         }
 
         return t;
