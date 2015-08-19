@@ -11,6 +11,7 @@ namespace SE_chat_bot_app_3.CommonInterfaces
         bool SolvedSet { get; }
         bool Solved { get; set; }
         bool Respond { get; set; }
+        bool RespondIfUnrecognized { get; set; }
 
         int CommandMessageID { get; set; }
         bool CommandMessageWasEdited { get; set; }

@@ -189,7 +189,7 @@ namespace SE_chat_bot_app_3
 
         public IProcessingResult ProcessMessage(IBot bot, IProcessingResult pr, IChatMessage msg)
         {
-            if (!CheckIfMessageShouldBeProcessed(bot, msg))
+            if (!CheckIfMessageShouldBeProcessed(bot, pr, msg))
             {
                 pr.Solved = true;
                 return pr;
@@ -215,7 +215,7 @@ namespace SE_chat_bot_app_3
 
             return pr;
         }
-        private bool CheckIfMessageShouldBeProcessed(IBot bot, IChatMessage msg)
+        private bool CheckIfMessageShouldBeProcessed(IBot bot, IProcessingResult pr, IChatMessage msg)
         {
             if (msg.UserID == bot.UserID)
                 return false;
@@ -227,7 +227,10 @@ namespace SE_chat_bot_app_3
             var owns = GetOwnMessagesFromTranscript();
             foreach (var own in owns)
                 if (own.MessageID == msg.ReplyMessageID && own.UserID == this.UserID)
+                {
+                    pr.RespondIfUnrecognized = false;
                     return true;
+                }
 
             bool b = false;
             var n = Helper.MessageContainsBotNameOrBeginsWithTriggerSymbol(bot.Name, msg.Text, bot.TriggerSymbol);
@@ -356,13 +359,14 @@ namespace SE_chat_bot_app_3
                 pr.Solved = true; // not really solved, but yeah
                 pr.ReplyMessageID = msg.MessageID;
 
-                pr.Respond = true;
+                if (pr.RespondIfUnrecognized)
+                    pr.Respond = true;
 
                 var replies = new string[] {
                         "I don't know how to deal with this message.", "I don't understand your request.", "I don't know that command.",
                         "Looks like there is no such command.", 
                         
-                        "I think your syntax might be wrong.", "Perhaph you mistyped something.", "You probably made a typo in that command.",
+                        "I think your syntax might be wrong.", "Perhaps you mistyped something.", "You probably made a typo in that command.",
 
                         "That's not a command I understand.", 
                         "I don't get it.", "I don't understand what you mean by that.",  "I'm not sure what that means.",

@@ -50,6 +50,16 @@ add/remove entries by their ID number, keep entries, don't delete them, unless d
 
 ————
 
+# 3.0.10
+
+~ 30-second rule is back, reducing reconnection timeout
+
+
+# 3.0.9
+
++ RespondIfUnrecognized to avoid answering to non-command @responses
+
+
 # 3.0.8
 
 + loaded back all aliases

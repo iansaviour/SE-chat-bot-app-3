@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tab_Main = new System.Windows.Forms.TabPage();
@@ -65,6 +66,7 @@
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.tabControl1.SuspendLayout();
             this.tab_Main.SuspendLayout();
             this.tab_Chat.SuspendLayout();
@@ -480,6 +482,13 @@
             this.toolStripStatusLabel4.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel4.Text = "toolStripStatusLabel4";
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "SE chat bot app 3";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.Click += new System.EventHandler(this.notifyIcon1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -493,6 +502,7 @@
             this.Text = "SE chat bot app 3";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             this.tabControl1.ResumeLayout(false);
             this.tab_Main.ResumeLayout(false);
             this.tab_Main.PerformLayout();
@@ -555,6 +565,7 @@
         private System.Windows.Forms.Label l_botConfigNotFound;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 

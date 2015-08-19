@@ -123,7 +123,34 @@
   <metadata name="statusStrip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>133, 17</value>
   </metadata>
+  <metadata name="notifyIcon1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>249, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="notifyIcon1.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAABMLAAATCwAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN+wYv8AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADfsGL/37Bi/wAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA37Bi/9+wYv/fsGL/AAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAA37Bi/9+wYv/fsGL/37Bi/9+wYv/fsGL/37Bi/9+wYv/fsGL/37Bi/9+w
+        Yv/fsGL/37Bi/wAAAAAAAAAA37Bi/9+wYv/fsGL/37Bi/9+wYv/fsGL/37Bi/9+wYv/fsGL/37Bi/9+w
+        Yv/fsGL/37Bi/9+wYv/fsGL/AAAAAN+wYv/fsGL/37Bi////////////////////////////////////
+        /////////////9+wYv/fsGL/37Bi/wAAAADfsGL/37Bi/9+wYv//////37Bi/9+wYv/fsGL/37Bi/9+w
+        Yv/fsGL/37Bi///////fsGL/37Bi/9+wYv8AAAAA37Bi/9+wYv/fsGL//////9+wYv//////////////
+        /////////////9+wYv//////37Bi/9+wYv/fsGL/AAAAAN+wYv/fsGL/37Bi///////fsGL//////9+w
+        Yv//////37Bi///////fsGL//////9+wYv/fsGL/37Bi/wAAAADfsGL/37Bi/9+wYv//////37Bi////
+        ////////////////////////37Bi///////fsGL/37Bi/9+wYv8AAAAA37Bi/9+wYv/fsGL/37Bi/9+w
+        Yv//////37Bi///////fsGL//////9+wYv/fsGL/37Bi/9+wYv/fsGL/AAAAAN+wYv/fsGL/37Bi/9+w
+        Yv/fsGL////////////////////////////fsGL/37Bi/9+wYv/fsGL/37Bi/wAAAADfsGL/37Bi/9+w
+        Yv/fsGL/37Bi/9+wYv/fsGL//////9+wYv/fsGL/37Bi/9+wYv/fsGL/37Bi/9+wYv8AAAAA37Bi/9+w
+        Yv/fsGL/////////////////////////////////////////////////37Bi/9+wYv/fsGL/AAAAAN+w
+        Yv/fsGL/37Bi/9+wYv/fsGL/37Bi/9+wYv/fsGL/37Bi/9+wYv/fsGL/37Bi/9+wYv/fsGL/37Bi/wAA
+        AAAAAAAA37Bi/9+wYv/fsGL/37Bi/9+wYv/fsGL/37Bi/9+wYv/fsGL/37Bi/9+wYv/fsGL/37Bi/wAA
+        AAAAAAAA/38wAP8/MAD/HzAAgAMwAAABMAAAAWAAAAFgAAABYAAAAZAAAAFgAAABMAAAAWAAAAFgAAAB
+        MAAAAWAAgAMwAA==
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAABMLAAATCwAAAAAAAAAA

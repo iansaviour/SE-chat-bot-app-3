@@ -25,8 +25,8 @@ namespace SE_chat_bot_app_3
         private Client client;
 
         public bool exceptionOccurred;
-        public TimeSpan LastEventArrivalMaximumDelta = new TimeSpan(0, 3, 0);
-        public TimeSpan ChatApiReinitializationInterval = new TimeSpan(0, 15, 0);
+        public TimeSpan LastEventArrivalMaximumDelta = new TimeSpan(0, 1, 0);
+        public TimeSpan ChatApiReinitializationInterval = new TimeSpan(0, 5, 0);
         public DateTime LastChatApiInitializationAttempt = DateTime.MinValue;
 
         public Dictionary<int, int> processedMessageIDEditsDic = new Dictionary<int, int>();

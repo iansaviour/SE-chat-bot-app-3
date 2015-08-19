@@ -18,6 +18,9 @@ namespace SE_chat_bot_app_3
         private bool respond = false;
         public bool Respond { get { return respond; } set { respond = value; } }
 
+        private bool respondIfUnrecognized = true;
+        public bool RespondIfUnrecognized { get { return respondIfUnrecognized; } set { respondIfUnrecognized = value; } }
+      
         private int commandMessageID;
         public int CommandMessageID { get { return commandMessageID; } set { commandMessageID = value; } }
 
@@ -38,5 +41,6 @@ namespace SE_chat_bot_app_3
 
         private int replyMessageID;
         public int ReplyMessageID { get { return replyMessageID; } set { replyMessageID = value; } }
+
     }
 }

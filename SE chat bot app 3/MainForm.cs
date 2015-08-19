@@ -426,6 +426,27 @@ namespace SE_chat_bot_app_3
 
 
 
+        private void MainForm_SizeChanged(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                this.ShowInTaskbar = false;
+                this.Hide();
+                notifyIcon1.Visible = true;
+            }
+            else
+            {
+                this.ShowInTaskbar = true;
+                notifyIcon1.Visible = false;
+                this.Show();
+            }
+        }
+
+        private void notifyIcon1_Click(object sender, EventArgs e)
+        {
+            this.Show();
+            this.WindowState = FormWindowState.Normal;
+        }
 
 
 
