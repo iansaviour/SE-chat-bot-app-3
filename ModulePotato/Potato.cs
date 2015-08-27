@@ -632,7 +632,7 @@ public class ModulePotato : ModuleBase, IModule
                 return "Last chat message is null. So waiting for *" + config.postinterval + "* messages to be posted before sending a pic.";
 
             if (DateTime.UtcNow.Subtract(bot.LatestReceivedChatMessage.PostedAtUTC) >= config.ts_IntervalAfterLastMessage)
-                return "Next " + Helper.FirstCharToUpper(cmdOriginal) + " post is due *now*.";
+                return "Next " + cmdOriginal.ToLowerInvariant() + " is due *now*.";
             else
                 return "Waiting for *" + (int)ts_WaitInterval.Subtract(DateTime.UtcNow.Subtract(bot.LatestReceivedChatMessage.PostedAtUTC)).TotalSeconds + "* seconds to pass after the last message.";
         }
@@ -640,9 +640,9 @@ public class ModulePotato : ModuleBase, IModule
         {
             var n = MessageInterval - num;
             if (n.ToString().EndsWith("1"))
-                return "Next " + Helper.FirstCharToUpper(cmdOriginal) + " post is due in " + n + " message.";
+                return "Next " + cmdOriginal.ToLowerInvariant() + " is due in " + n + " message.";
             else
-                return "Next " + Helper.FirstCharToUpper(cmdOriginal) + " post is due in " + n + " messages.";
+                return "Next " + cmdOriginal.ToLowerInvariant() + " is due in " + n + " messages.";
         }
     }
 
